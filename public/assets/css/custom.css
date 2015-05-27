@@ -1,0 +1,70 @@
+/* Add here all your css styles (customizations) */
+
+.top-nav {
+    background-color: #f9bd1c;
+    border-color: #f9bd1c;
+    margin-bottom: 0;
+}
+
+.top-nav .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:focus, .navbar-inverse .navbar-nav > .active > a:hover {
+    background-color: #e2a500;
+    color: #fff;
+}
+
+.top-nav .navbar-nav > li > a {
+    color: #fff;
+    font-weight: bold;
+}
+
+.top-nav .navbar-collapse, .top-nav .navbar-form {
+    border-color: #f9bd1c;
+}
+
+.top-nav .navbar-toggle {
+    border-color: #e2a500;
+}
+
+.header-1 {
+    padding-bottom: 0;
+    background-color: #fdfadb;
+}
+
+.header-1 img {
+    margin-top: -15px;
+}
+
+.header-1 p {
+    margin: 0;
+}
+
+.header-1 p strong {
+    color: #ec5a7d;
+}
+
+.header-1 .btn-u.btn-u-red {
+    background: #ec5a7d none repeat scroll 0 0;
+}
+
+.height-140 { min-height: 140px;}
+
+.header {
+    border-top: 2px solid #eee;
+}
+
+.caption hr {
+    margin: 15px 0;
+}
+
+.caption p.lead{
+    font-size: 18px;
+    font-weight: bold;
+    color: #e91154;
+}
+
+.caption .btn-u.btn-u-orange {
+    background: #e91154 none repeat scroll 0 0;
+}
+
+.caption .btn-u.btn-u-orange:hover, .caption .btn-u.btn-u-orange:focus, .caption .btn-u.btn-u-orange:active, .caption .btn-u.btn-u-orange.active, .caption .open .dropdown-toggle.btn-u.btn-u-orange {
+    background: #c61048 none repeat scroll 0 0;
+}
