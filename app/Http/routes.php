@@ -18,3 +18,13 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+// Группа роутов польз. части
+Route::group(['namespace' => 'Marketing'], function()
+{
+    Route::controllers([
+        'about'         => 'AboutController',
+        'payments'         => 'PaymentsController',
+        'contacts'         => 'ContactsController',
+    ]);
+});

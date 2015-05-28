@@ -1,5 +1,9 @@
 /* Add here all your css styles (customizations) */
 
+body {
+    padding-top: 50px;
+}
+
 .top-nav {
     background-color: #f9bd1c;
     border-color: #f9bd1c;
@@ -41,14 +45,14 @@
     color: #ec5a7d;
 }
 
-.header-1 .btn-u.btn-u-red {
-    background: #ec5a7d none repeat scroll 0 0;
-}
-
 .height-140 { min-height: 140px;}
 
 .header {
     border-top: 2px solid #eee;
+}
+
+.header > .container {
+    margin-bottom: 0;
 }
 
 .caption hr {

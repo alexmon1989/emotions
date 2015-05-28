@@ -147,6 +147,9 @@ return [
 		
 		'Barryvdh\Debugbar\ServiceProvider',
 		'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
+        'Pingpong\Widget\WidgetServiceProvider',
+        'Orchestra\Memory\MemoryServiceProvider',
+        'Orchestra\Memory\CommandServiceProvider',
 
 	],
 
@@ -196,6 +199,8 @@ return [
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
 		'Debugbar'  => 'Barryvdh\Debugbar\Facade',
+        'Widget'    => 'Pingpong\Widget\WidgetFacade',
+        'Memory'    => 'Orchestra\Support\Facades\Memory',
 
 	],
 
