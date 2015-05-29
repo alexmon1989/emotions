@@ -2,6 +2,7 @@
 
 use Emotions\Article;
 use Emotions\Http\Controllers\Controller;
+use Emotions\Product;
 
 class HomeController extends Controller {
 
@@ -14,6 +15,11 @@ class HomeController extends Controller {
 	{
         // Получаем статью
         $data['article'] = Article::where('type', '=', 'main_article')->first();
+
+        // Получаем товары
+        $data['products'] = Product::getProductCategorized();
+        //dd($data['products']);
+
 
 		return view('marketing.home.index', $data);
 	}

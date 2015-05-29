@@ -4,6 +4,7 @@ use Emotions\Article;
 use Emotions\Http\Requests;
 use Emotions\Http\Controllers\Controller;
 
+use Emotions\Product;
 use Illuminate\Http\Request;
 
 class PaymentsController extends Controller {
