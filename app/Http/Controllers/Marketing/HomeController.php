@@ -17,9 +17,11 @@ class HomeController extends Controller {
         $data['article'] = Article::where('type', '=', 'main_article')->first();
 
         // Получаем товары
-        $data['products'] = Product::getProductCategorized();
-        //dd($data['products']);
-
+        $data['products'] = Product::orderBy('price_new')
+                                ->orderBy('title')
+                                ->where('enabled', '=', TRUE)
+                                ->where('is_on_main', '=', TRUE)
+                                ->get();
 
 		return view('marketing.home.index', $data);
 	}

@@ -150,6 +150,8 @@ return [
         'Pingpong\Widget\WidgetServiceProvider',
         'Orchestra\Memory\MemoryServiceProvider',
         'Orchestra\Memory\CommandServiceProvider',
+        'Intervention\Image\ImageServiceProvider',
+        'Barryvdh\Elfinder\ElfinderServiceProvider',
 
 	],
 
@@ -201,6 +203,7 @@ return [
 		'Debugbar'  => 'Barryvdh\Debugbar\Facade',
         'Widget'    => 'Pingpong\Widget\WidgetFacade',
         'Memory'    => 'Orchestra\Support\Facades\Memory',
+        'Image'     => 'Intervention\Image\Facades\Image'
 
 	],
 

@@ -7,6 +7,7 @@ use Emotions\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use Emotions\Http\Requests\ContactsMessageRequest;
+use Illuminate\Support\Facades\Mail;
 use Orchestra\Support\Facades\Memory;
 
 class ContactsController extends Controller {

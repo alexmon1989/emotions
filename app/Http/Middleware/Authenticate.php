@@ -40,9 +40,14 @@ class Authenticate {
 			}
 			else
 			{
-				return redirect()->guest('auth/login');
+				return redirect()->guest('admin/auth/login');
 			}
 		}
+
+        if ($request->path() == 'admin')
+        {
+            return redirect()->to('admin/dashboard');
+        }
 
 		return $next($request);
 	}

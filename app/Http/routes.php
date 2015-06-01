@@ -14,17 +14,33 @@
 Route::get('/', 'Marketing\HomeController@index');
 Route::get('home', 'Marketing\HomeController@index');
 
-Route::controllers([
-	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
-]);
+Route::get('admin', ['middleware' => 'auth', 'Admin\DashboardController@getIndex']);
+
+// Роут контроллера авторизации, middleware указан в его конструкторе
+Route::controller('admin/auth', 'Admin\Auth\AuthController');
 
 // Группа роутов польз. части
 Route::group(['namespace' => 'Marketing'], function()
 {
     Route::controllers([
-        'about'         => 'AboutController',
+        'about'            => 'AboutController',
         'payments'         => 'PaymentsController',
         'contacts'         => 'ContactsController',
+        'products'         => 'ProductsController',
+    ]);
+});
+
+// Группа роутов админки
+Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth'], function()
+{
+    Route::controllers([
+        'dashboard'                 => 'DashboardController',
+        'slider'                    => 'SliderController',
+        'products'                  => 'ProductsController',
+        'about'                     => 'AboutController',
+        'payments'                  => 'PaymentsController',
+        'main-article'              => 'MainArticleController',
+        'contacts/info'             => 'ContactsInfoController',
+        'contacts/messages'         => 'ContactsMessagesController',
     ]);
 });

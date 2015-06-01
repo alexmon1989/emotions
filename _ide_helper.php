@@ -1,7 +1,7 @@
 <?php
 /**
  * An helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.0.31 on 2015-05-28.
+ * Generated for Laravel 5.0.32 on 2015-05-31.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -1433,7 +1433,7 @@ namespace {
         }
         
         /**
-         * Return the currently cached user of the application.
+         * Return the currently cached user.
          *
          * @return \Emotions\User|null 
          * @static 
@@ -1443,7 +1443,7 @@ namespace {
         }
         
         /**
-         * Set the current user of the application.
+         * Set the current user.
          *
          * @param \Illuminate\Contracts\Auth\Authenticatable $user
          * @return void 
@@ -1809,7 +1809,7 @@ namespace {
         }
         
         /**
-         * Register command to handler mappings.
+         * Register command-to-handler mappings.
          *
          * @param array $commands
          * @return void 
@@ -1844,7 +1844,7 @@ namespace {
         }
         
         /**
-         * Set the pipes commands should be piped through before dispatching.
+         * Set the pipes through which commands should be piped before dispatching.
          *
          * @param array $pipes
          * @return $this 
@@ -7476,6 +7476,7 @@ namespace {
          * @param mixed $data
          * @param string $queue
          * @return mixed 
+         * @throws \Exception
          * @static 
          */
         public static function push($job, $data = '', $queue = null){
@@ -12166,6 +12167,175 @@ namespace {
          */
         public static function callGroup($name, $parameters = array()){
             return \Pingpong\Widget\Widget::callGroup($name, $parameters);
+        }
+        
+    }
+
+
+    class Memory extends \Orchestra\Support\Facades\Memory{
+        
+        /**
+         * Get the default driver.
+         *
+         * @return string 
+         * @static 
+         */
+        public static function getDefaultDriver(){
+            return \Orchestra\Memory\MemoryManager::getDefaultDriver();
+        }
+        
+        /**
+         * Set the default driver.
+         *
+         * @param string $name
+         * @return void 
+         * @static 
+         */
+        public static function setDefaultDriver($name){
+            \Orchestra\Memory\MemoryManager::setDefaultDriver($name);
+        }
+        
+        /**
+         * Get configuration values.
+         *
+         * @return array 
+         * @static 
+         */
+        public static function getConfig(){
+            return \Orchestra\Memory\MemoryManager::getConfig();
+        }
+        
+        /**
+         * Set configuration.
+         *
+         * @param array $config
+         * @return $this 
+         * @static 
+         */
+        public static function setConfig($config){
+            return \Orchestra\Memory\MemoryManager::setConfig($config);
+        }
+        
+        /**
+         * Make default driver or fallback to runtime.
+         *
+         * @param string $fallbackName
+         * @return \Orchestra\Contracts\Memory\Provider 
+         * @static 
+         */
+        public static function makeOrFallback($fallbackName = 'orchestra'){
+            return \Orchestra\Memory\MemoryManager::makeOrFallback($fallbackName);
+        }
+        
+        /**
+         * Loop every instance and execute finish method (if available).
+         *
+         * @return void 
+         * @static 
+         */
+        public static function finish(){
+            \Orchestra\Memory\MemoryManager::finish();
+        }
+        
+        /**
+         * Create a new instance.
+         *
+         * @param string $driver
+         * @return object 
+         * @static 
+         */
+        public static function make($driver = null){
+            //Method inherited from \Orchestra\Support\Manager            
+            return \Orchestra\Memory\MemoryManager::make($driver);
+        }
+        
+        /**
+         * Get a driver instance.
+         *
+         * @param string $driver
+         * @return mixed 
+         * @static 
+         */
+        public static function driver($driver = null){
+            //Method inherited from \Illuminate\Support\Manager            
+            return \Orchestra\Memory\MemoryManager::driver($driver);
+        }
+        
+        /**
+         * Register a custom driver creator Closure.
+         *
+         * @param string $driver
+         * @param \Closure $callback
+         * @return $this 
+         * @static 
+         */
+        public static function extend($driver, $callback){
+            //Method inherited from \Illuminate\Support\Manager            
+            return \Orchestra\Memory\MemoryManager::extend($driver, $callback);
+        }
+        
+        /**
+         * Get all of the created "drivers".
+         *
+         * @return array 
+         * @static 
+         */
+        public static function getDrivers(){
+            //Method inherited from \Illuminate\Support\Manager            
+            return \Orchestra\Memory\MemoryManager::getDrivers();
+        }
+        
+    }
+
+
+    class Image extends \Intervention\Image\Facades\Image{
+        
+        /**
+         * Overrides configuration settings
+         *
+         * @param array $config
+         * @static 
+         */
+        public static function configure($config = array()){
+            return \Intervention\Image\ImageManager::configure($config);
+        }
+        
+        /**
+         * Initiates an Image instance from different input types
+         *
+         * @param mixed $data
+         * @return \Intervention\Image\Image 
+         * @static 
+         */
+        public static function make($data){
+            return \Intervention\Image\ImageManager::make($data);
+        }
+        
+        /**
+         * Creates an empty image canvas
+         *
+         * @param integer $width
+         * @param integer $height
+         * @param mixed $background
+         * @return \Intervention\Image\Image 
+         * @static 
+         */
+        public static function canvas($width, $height, $background = null){
+            return \Intervention\Image\ImageManager::canvas($width, $height, $background);
+        }
+        
+        /**
+         * Create new cached image and run callback
+         * (requires additional package intervention/imagecache)
+         *
+         * @param \Closure $callback
+         * @param integer $lifetime
+         * @param boolean $returnObj
+         * @return \Intervention\Image\Image 
+         * @static 
+         */
+        public static function cache($callback, $lifetime = null, $returnObj = false){
+            return \Intervention\Image\ImageManager::cache($callback, $lifetime, $returnObj);
         }
         
     }
