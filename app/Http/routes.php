@@ -27,6 +27,7 @@ Route::group(['namespace' => 'Marketing'], function()
         'payments'         => 'PaymentsController',
         'contacts'         => 'ContactsController',
         'products'         => 'ProductsController',
+        'actions'          => 'ActionsController',
     ]);
 });
 
@@ -42,5 +43,6 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
         'main-article'              => 'MainArticleController',
         'contacts/info'             => 'ContactsInfoController',
         'contacts/messages'         => 'ContactsMessagesController',
+        'actions'                   => 'ActionsController',
     ]);
 });

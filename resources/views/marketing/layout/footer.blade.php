@@ -17,7 +17,7 @@
                         <li><a href="{{ action('Marketing\AboutController@getIndex') }}">О компании</a><i class="fa fa-angle-right"></i></li>
                         <li><a href="{{ action('Marketing\ProductsController@getIndex') }}">Каталог</a><i class="fa fa-angle-right"></i></li>
                         <li><a href="{{ action('Marketing\PaymentsController@getIndex') }}">Доставка и оплата</a><i class="fa fa-angle-right"></i></li>
-                        <li><a href="#">Наши акции</a><i class="fa fa-angle-right"></i></li>
+                        <li><a href="{{ action('Marketing\ActionsController@getIndex') }}">Наши акции</a><i class="fa fa-angle-right"></i></li>
                         <li><a href="{{ action('Marketing\ContactsController@getIndex') }}">Контакты</a><i class="fa fa-angle-right"></i></li>
                     </ul>
                 </div><!--/col-md-3-->
@@ -40,14 +40,30 @@
     <div class="copyright">
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-5">
                     <p>
                         {{ date('Y') }} &copy; Все права защищены.
                     </p>
                 </div>
 
+                <div class="col-md-2 text-center">
+
+                    <!--Openstat-->
+                    <span id="openstat2374972"></span>
+                    <script type="text/javascript">
+                    var openstat = { counter: 2374972, image: 5083, color: "ff9822", next: openstat };
+                    (function(d, t, p) {
+                    var j = d.createElement(t); j.async = true; j.type = "text/javascript";
+                    j.src = ("https:" == p ? "https:" : "http:") + "//openstat.net/cnt.js";
+                    var s = d.getElementsByTagName(t)[0]; s.parentNode.insertBefore(j, s);
+                    })(document, "script", document.location.protocol);
+                    </script>
+                    <!--/Openstat-->
+
+                </div>
+
                 <!-- Social Links -->
-                <div class="col-md-6">
+                <div class="col-md-5">
                     <ul class="footer-socials list-inline">
                         <li>
                             <a href="https://vk.com/public94991535" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="ВКонтакте">
@@ -57,6 +73,11 @@
                         <li>
                             <a href="https://www.facebook.com/emotions151?fref=ts" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Facebook">
                                 <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://instagram.com/emotions15" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Instagrem">
+                                <i class="fa fa-instagram"></i>
                             </a>
                         </li>
                     </ul>

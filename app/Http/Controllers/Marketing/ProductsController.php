@@ -26,6 +26,11 @@ class ProductsController extends Controller {
                                  ->where('price_new', '<', $request->get('price_to'));
         }
 
+        if (!is_null($request->get('product_type_id')))
+        {
+            $products = $products->where('product_type_id', '=', $request->get('product_type_id'));
+        }
+
 		return view('marketing.products.index', ['products' => $products->get()]);
 	}
 

@@ -19,7 +19,7 @@
                 <li class="{{ Request::segment(1) == 'about' ? 'active' : '' }}"><a href="{{ action('Marketing\AboutController@getIndex') }}"><i class="fa fa-gift"></i> О компании</a></li>
                 <li class="{{ Request::segment(1) == 'products' ? 'active' : '' }}"><a href="{{ action('Marketing\ProductsController@getIndex') }}"><i class="fa fa-shopping-cart"></i> Каталог</a></li>
                 <li class="{{ Request::segment(1) == 'payments' ? 'active' : '' }}"><a href="{{ action('Marketing\PaymentsController@getIndex') }}"><i class="fa fa-truck"></i> Доставка и оплата</a></li>
-                <li class="{{ Request::segment(1) == 'promotions' ? 'active' : '' }}"><a href="#promotions"><i class="fa fa-cube"></i> Наши акции</a></li>
+                <li class="{{ Request::segment(1) == 'actions' ? 'active' : '' }}"><a href="{{ action('Marketing\ActionsController@getIndex') }}"><i class="fa fa-cube"></i> Наши акции</a></li>
                 <li class="{{ Request::segment(1) == 'contacts' ? 'active' : '' }}"><a href="{{ action('Marketing\ContactsController@getIndex') }}"><i class="fa fa-phone"></i> Контакты</a></li>
             </ul>
         </div><!--/.nav-collapse -->

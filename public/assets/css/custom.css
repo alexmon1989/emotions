@@ -49,7 +49,11 @@ body {
     background: #6bb274 none repeat scroll 0 0;
 }
 
-.header-1 .btn-u.btn-u-sea:hover, .caption .btn-u.btn-u-sea:focus, .caption .btn-u.btn-u-sea:active, .caption .btn-u.btn-u-sea.active, .caption .open .dropdown-toggle.btn-u.btn-u-sea {
+.header-1 .btn-u.btn-u-sea:hover,
+.btn-u.btn-u-sea:focus,
+.btn-u.btn-u-sea:active,
+.btn-u.btn-u-sea.active,
+.open .dropdown-toggle.btn-u.btn-u-sea {
     background: #34673b none repeat scroll 0 0;
 }
 
@@ -95,4 +99,16 @@ body {
 
 .margin-top-12 {
     margin-top: 12px;
+}
+
+#topcontrol {
+    background: #6bb274 none repeat scroll 0 0;
+    height: 40px;
+    width: 40px;
+    bottom: 100px !important;
+}
+
+#topcontrol::after {
+    left: 13.5px;
+    top: 2px;
 }

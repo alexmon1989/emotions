@@ -9,8 +9,7 @@
     <!-- Meta -->
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="description">
-    <meta content="" name="author">
+    <meta name="openstat-verification" content="18b5005793152a823aebf0327f9433c8bec909c8" />
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="favicon.png">
@@ -107,10 +106,16 @@
     <script type="text/javascript" src="{{ asset('assets/plugins/backstretch/jquery.backstretch.min.js') }}"></script>
     <script type="text/javascript">
         $.backstretch([
-          "{{ asset('assets/img/bg/bg.png') }}"
+          "{{ asset('assets/img/bg/bg.jpg') }}"
           ])
     </script>
     <!-- End For Background Image -->
+
+    <!-- BEGIN JIVOSITE CODE {literal} -->
+    <script type='text/javascript'>
+    (function(){ var widget_id = 'w8v4yDwE3F';
+    var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);})();</script>
+    <!-- {/literal} END JIVOSITE CODE -->
 
 </body>
 

@@ -3,7 +3,6 @@
 @section('content')
     <div class="shadow-wrapper">
         <div class="tag-box tag-box-v1 box-shadow shadow-effect-2">
-           <h2>{{ $article->title }}</h2>
             {!! $article->full_text; !!}
         </div>
     </div>
