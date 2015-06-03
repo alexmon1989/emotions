@@ -54,6 +54,21 @@
             <li class="{{ Request::segment(2) == 'products' ? 'active' : '' }}">
                 <a href="{{ action('Admin\ProductsController@getIndex') }}"><i class="fa fa-shopping-cart"></i> Продукты</a>
             </li>
+            <li class="treeview {{ Request::segment(2) == 'orders' ? 'active' : '' }}">
+                <a href="#">
+                    <i class="fa fa-dollar"></i>
+                    <span>Заказы</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="{{ Request::segment(3) == 'list' ? 'active' : '' }}">
+                        <a href="{{ action('Admin\OrdersListController@getIndex') }}"><i class="fa fa-circle-o"></i> Список заказов</a>
+                    </li>
+                    <li class="{{ Request::segment(3) == 'settings' ? 'active' : '' }}">
+                        <a href="#"><i class="fa fa-circle-o"></i> Настройки</a>
+                    </li>
+                </ul>
+            </li>
 
         </ul>
 

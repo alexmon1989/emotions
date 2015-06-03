@@ -13,6 +13,7 @@
 
 Route::get('/', 'Marketing\HomeController@index');
 Route::get('home', 'Marketing\HomeController@index');
+Route::post('home/make-order', 'Marketing\HomeController@makeOrder');
 
 Route::get('admin', ['middleware' => 'auth', 'Admin\DashboardController@getIndex']);
 
@@ -44,5 +45,6 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
         'contacts/info'             => 'ContactsInfoController',
         'contacts/messages'         => 'ContactsMessagesController',
         'actions'                   => 'ActionsController',
+        'orders/list'               => 'OrdersListController',
     ]);
 });

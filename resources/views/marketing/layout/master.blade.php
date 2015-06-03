@@ -4,12 +4,14 @@
 <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
 
 <head>
+    <base href="{{ url() . '/' }}">
     <title>@yield('page_title', 'Главная') - Эмоции</title>
 
     <!-- Meta -->
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta name="openstat-verification" content="18b5005793152a823aebf0327f9433c8bec909c8" />
+    <meta name="csrf_token" content="{!! Crypt::encrypt(csrf_token()) !!}"/>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="favicon.png">

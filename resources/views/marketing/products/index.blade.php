@@ -38,7 +38,7 @@
                             <p class="lead {{ $products[$i+$j]->price_old == 0 ? 'margin-top-12' : '' }}">{{ $products[$i+$j]->price_new }} руб.</p>
                          </div>
                          <div class="col-md-7">
-                            <a class="btn btn-u btn-u-orange btn-u-lg btn-block rounded-2x" href="#"><i class="fa fa-shopping-cart"></i> Заказать</a>
+                            <a class="btn btn-u btn-u-orange btn-u-lg btn-block rounded-2x make-order" data-id="{{ $products[$i+$j]->id }}" data-title="{{ $products[$i+$j]->title }}" data-toggle="modal" data-target="#responsive" href="#"><i class="fa fa-shopping-cart"></i> Заказать</a>
                          </div>
                      </div>
 
@@ -50,5 +50,7 @@
     @endfor
 </div>
 @endfor
+
+@include('marketing.layout.order_modal')
 
 @stop
