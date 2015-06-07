@@ -9,7 +9,7 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="col-md-12">
-                        <div style="display: none" id="loading-div" class="text-center">Пожалуйста, подождите, идёт отправка сообщения...<img width="60" src="{{ asset('assets/img/loading.gif') }}" alt="Отправка..."/></div>
+                        <div style="display: none" id="loading-div" class="text-center">Пожалуйста, подождите, идёт отправка заказа...<img width="60" src="{{ asset('assets/img/loading.gif') }}" alt="Отправка..."/></div>
 
                         <div class="alert alert-danger" style="display: none" id="errors-price-div">
                             <h4>Ошибка!</h4>
@@ -17,8 +17,8 @@
                         </div>
 
                         <div class="alert alert-success" style="display: none" id="success-price-div">
-                            <h4>Сообщение отправлено!</h4>
-                            В ближайшеее время по указанному адресу мы вышлем наш прайс-лист.
+                            <h4>Запрос на заказ отправлен!</h4>
+                            В ближайшеее время мы свяжемся с вами.
                         </div>
 
                         <h4 class="margin-bottom-10">Название сертификата: <strong><span id="title"></span></strong></h4>
