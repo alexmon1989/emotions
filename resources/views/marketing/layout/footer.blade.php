@@ -4,8 +4,7 @@
         <div class="container">
             <div class="row">
                 <!-- About -->
-                <div class="col-md-4 md-margin-bottom-40">
-                    <div class="text-center"><a href="index.html"><img id="logo-footer" class="footer-logo" src="{{ asset('assets/img/logo2-default.png') }}" alt=""></a></div>
+                <div class="col-md-4 md-margin-bottom-40 footer-about">
                     <p>Подарочные сертификаты – это универсальный и удобный подарок и родным на праздники и дни рождения, и партнеру по бизнесу или коллеге, и своей любимой или любимому. Ведь это гораздо лучше и оригинальнее, чем дарить деньги.</p>
                 </div><!--/col-md-3-->
                 <!-- End About -->
@@ -76,7 +75,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="https://instagram.com/emotions15" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Instagrem">
+                            <a href="https://instagram.com/Emotions.15rus" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Instagrem">
                                 <i class="fa fa-instagram"></i>
                             </a>
                         </li>

@@ -33,6 +33,10 @@ body {
     background-color: #fdfadb;
 }
 
+.social-links img{
+    margin-left: 5px;
+}
+
 .header-1 p {
     margin: 0;
 }
@@ -111,4 +115,27 @@ body {
 #topcontrol::after {
     left: 13.5px;
     top: 2px;
+}
+
+.footer-v1 .footer {
+    background: #26492b none repeat scroll 0 0;
+}
+
+.footer-v1 .copyright {
+    background: #19321d none repeat scroll 0 0;
+}
+
+.footer-v1 .footer-about {
+    margin-top: 70px;
+}
+
+/** Оцентровка верхнего меню */
+.top-nav .navbar-nav {
+    width: 100%;
+    text-align: center;
+}
+
+.top-nav .navbar-nav > li {
+    float: none;
+    display: inline-block;
 }

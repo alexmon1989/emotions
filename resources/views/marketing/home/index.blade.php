@@ -14,11 +14,10 @@
             @if (isset($products[$i+$j]))
             <div class="col-md-4">
                 <div class="thumbnails thumbnail-style">
-                     <img alt="{{ $products[$i+$j]->title }}" src="{{ asset('assets/img/products/'.$products[$i+$j]->file_name) }}" class="img-responsive">
+                     <a href="{{ action('Marketing\ProductsController@getShow', ['id'=>$products[$i+$j]->id]) }}"><img alt="{{ $products[$i+$j]->title }}" src="{{ asset('assets/img/products/'.$products[$i+$j]->file_name) }}" class="img-responsive"></a>
                      <div class="caption">
                          <h3><a href="{{ action('Marketing\ProductsController@getShow', ['id'=>$products[$i+$j]->id]) }}" class="hover-effect">{{ $products[$i+$j]->title }}</a></h3>
                          <p>{!! $products[$i+$j]->description_short !!}</p>
-                         <p class="tooltips" data-placement="bottom" data-original-title="{{ $products[$i+$j]->what_inside }}"><i class="fa fa-info-circle"></i>&nbsp;&nbsp;<span class="color-dark-blue">Какие впечатления внутри</span></p>
                          <hr class="devider devider-dotted">
 
                          <div class="row">

@@ -46,5 +46,6 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
         'contacts/messages'         => 'ContactsMessagesController',
         'actions'                   => 'ActionsController',
         'orders/list'               => 'OrdersListController',
+        'orders/settings'           => 'OrdersSettingsController',
     ]);
 });

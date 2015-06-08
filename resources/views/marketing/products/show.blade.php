@@ -52,7 +52,7 @@
 
         <div class="row">
             <div class="col-md-12">
-                <a class="btn-u btn-u-orange btn-u-lg rounded make-order" data-id="{{ $product->id }}" data-title="{{ $product->title }}" data-toggle="modal" data-target="#responsive" href="#"><i class="fa fa-shopping-cart"></i> Заказать</a>
+                <a class="btn-u btn-u-orange btn-u-lg rounded make-order" data-id="{{ $product->id }}" data-title="{{ $product->title }}" data-toggle="modal" data-target="#responsive" href="#">Заказать</a>
             </div>
         </div>
     </div>

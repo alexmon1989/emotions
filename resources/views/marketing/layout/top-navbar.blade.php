@@ -9,11 +9,6 @@
             </button>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
-            <form class="navbar-form navbar-right" role="search">
-                <div class="form-group">
-                    <input type="text" class="form-control rounded-4x" placeholder="Поиск...">
-                </div>
-            </form>
             <ul class="nav navbar-nav navbar-right">
                 <li class="{{ Request::segment(1) == '' || Request::segment(1) == 'home' ? 'active' : '' }}"><a href="{{ action('Marketing\HomeController@index') }}"><i class="fa fa-home"></i> Главная</a></li>
                 <li class="{{ Request::segment(1) == 'about' ? 'active' : '' }}"><a href="{{ action('Marketing\AboutController@getIndex') }}"><i class="fa fa-gift"></i> О компании</a></li>

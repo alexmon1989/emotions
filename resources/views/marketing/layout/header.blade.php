@@ -22,10 +22,10 @@
             </div>
 
             <div class="row">
-                 <div class="col-md-5 col-xs-6 margin-bottom-25 col-md-offset-7">
-                        <a href="https://vk.com/public94991535" target="_blank" class="btn btn-vk-inversed rounded"><i class="fa fa-vk"></i> ВК</a>
-                        <a href="https://www.facebook.com/emotions151?fref=ts" target="_blank" class="btn btn-facebook-inversed rounded"><i class="fa fa-facebook"></i> Facebook</a>
-                        <a href="https://instagram.com/emotions15" target="_blank" class="btn btn-instagram-inversed rounded"><i class="fa fa-instagram"></i> Instagram</a>
+                 <div class="col-md-3 col-xs-6 margin-bottom-25 col-md-offset-9 social-links">
+                        <a href="https://vk.com/public94991535" target="_blank"><img src="{{ asset('assets/img/social-buttons/vk.png') }}" alt="ВКонтакте"/></a>
+                        <a href="https://www.facebook.com/emotions151?fref=ts" target="_blank"><img src="{{ asset('assets/img/social-buttons/facebook.png') }}" alt="Facebook"/></a>
+                        <a href="https://instagram.com/Emotions.15rus" target="_blank"><img src="{{ asset('assets/img/social-buttons/instagram.png') }}" alt="Instagram"/></a>
                  </div>
             </div>
 

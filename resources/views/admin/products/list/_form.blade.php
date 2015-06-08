@@ -43,11 +43,6 @@
             <p class="help-block">Если старой цены нет, оставьте пустым или введите 0.</p>
         </div>
 
-        <div class="form-group">
-            <label for="what_inside">Что внутри?</label>
-            <input type="title" placeholder="Что внутри?" id="what_inside" name="what_inside" class="form-control" value="{{ old('what_inside', isset($product) ? $product->what_inside : '') }}">
-        </div>
-
         <div class="checkbox">
             <label>
                 <input type="checkbox" name="enabled" value="1" {{ old('enabled', isset($product) ? $product->enabled : 0) == 1 ? 'checked=""' : ''  }}> Включено

@@ -10,7 +10,6 @@ class StoreProductsRequest extends Request {
         'price_new' => 'required|numeric',
         'price_old' => 'numeric',
         'file_name' => 'image',
-        'what_inside' => 'required|max:255',
         'is_on_main' => 'boolean',
         'enabled' => 'boolean',
     ];
@@ -57,8 +56,6 @@ class StoreProductsRequest extends Request {
             'price_new.required' => 'Поле "Цена новая" обязательно для заполнения.',
             'price_new.numeric' => 'Поле "Цена новая" должно иметь значение числового типа.',
             'price_old.numeric' => 'Поле "Цена новая" должно иметь значение числового типа.',
-            'what_inside.required' => 'Поле "Что внутри" обязательно для заполнения.',
-            'what_inside.max' => 'Количество символов в поле "Что внутри" не может превышать :max.',
             'file_name.image' => 'Поле "Изображение" должно быть изображением.',
             'file_name.required' => 'Поле "Изображение" обязательно для заполнения.',
             'is_on_main.boolean' => 'Поле "На главной" должно иметь значение логического типа.',

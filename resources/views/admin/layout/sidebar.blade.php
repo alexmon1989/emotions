@@ -65,7 +65,7 @@
                         <a href="{{ action('Admin\OrdersListController@getIndex') }}"><i class="fa fa-circle-o"></i> Список заказов</a>
                     </li>
                     <li class="{{ Request::segment(3) == 'settings' ? 'active' : '' }}">
-                        <a href="#"><i class="fa fa-circle-o"></i> Настройки</a>
+                        <a href="{{ action('Admin\OrdersSettingsController@getIndex') }}"><i class="fa fa-circle-o"></i> Настройки</a>
                     </li>
                 </ul>
             </li>

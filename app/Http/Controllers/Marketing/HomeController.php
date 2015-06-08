@@ -5,6 +5,7 @@ use Emotions\Http\Controllers\Controller;
 use Emotions\Http\Requests\StoreOrdersRequest;
 use Emotions\Order;
 use Emotions\Product;
+use Illuminate\Support\Facades\Mail;
 use Orchestra\Support\Facades\Memory;
 
 class HomeController extends Controller {
@@ -30,7 +31,7 @@ class HomeController extends Controller {
 	}
 
     /**
-     * Обработчик запроса на заказ товара
+     * Обработчик запроса на заказ товара.
      *
      * @return \Symfony\Component\HttpFoundation\Response
      */
@@ -46,19 +47,18 @@ class HomeController extends Controller {
         $product->save();
 
         // Отправляем письмо, если это предусмотрено настройками
-        if (Memory::get('orders.sen_to_email'))
+        if (Memory::get('orders.send_to_email'))
         {
+           $text = 'Для просмотра данных заказа перейдите по адресу http://emotions15.ru/admin/orders/list/edit/'.$product->id;
+           $subject = 'Новый заказ на сайте emotions15.ru';
+           Mail::raw($text, function($message) use (&$request, &$subject)
+           {
+               $message->from('orders@emotions15.ru', 'emotions15.ru');
+               $message->subject($subject);
 
+               $message->to(Memory::get('orders.email_to', 'info@emotions.ru'));
+           });
         }
-
-        /*$subject = 'Новый заказ на сайте emotions15.ru';
-        Mail::raw($subject, function($message) use (&$request, &$subject)
-        {
-            $message->from($request->get('email'), $request->get('name'));
-            $message->subject($subject);
-
-            $message->to(Memory::get('price_request.email_to', 'kalashnikov@kalashnikovcom.ru'));
-        });*/
 
         return response()->json([]);
     }

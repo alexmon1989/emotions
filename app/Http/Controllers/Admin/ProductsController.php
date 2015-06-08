@@ -61,7 +61,6 @@ class ProductsController extends AdminController {
         $product->description_full = trim($request->get('description_full'));
         $product->price_old = $request->get('price_old');
         $product->price_new = $request->get('price_new');
-        $product->what_inside = trim($request->get('what_inside'));
         $product->enabled = $request->get('enabled', FALSE);
         $product->is_on_main = $request->get('is_on_main', FALSE);
         $product->file_name = $this->saveImageToDisk();
@@ -102,7 +101,6 @@ class ProductsController extends AdminController {
         $product->description_full = trim($request->get('description_full'));
         $product->price_old = $request->get('price_old');
         $product->price_new = $request->get('price_new');
-        $product->what_inside = trim($request->get('what_inside'));
         $product->enabled = $request->get('enabled', FALSE);
         $product->is_on_main = $request->get('is_on_main', FALSE);
         if ($request->hasFile('file_name'))
