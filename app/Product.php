@@ -10,6 +10,14 @@ class Product extends Model {
     }
 
     /**
+     * Связь с таблицей `product_images`
+     */
+    public function images()
+    {
+        return $this->hasMany('Emotions\ProductImage');
+    }
+
+    /**
      * Получение товаров и разбитие их по ценовым категориям
      *
      * @param bool $forMain

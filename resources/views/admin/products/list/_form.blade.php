@@ -1,4 +1,4 @@
-<form role="form" method="post" enctype="multipart/form-data">
+<form role="form" method="post">
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
     <div class="box-body">
         <div class="form-group">
@@ -14,12 +14,6 @@
                     <option value="{{ $item->id }}" {{ old('product_type_id', isset($product) ? $product->product_type_id : NULL) == $item->id ? 'selected=""' : ''  }}>{{ $item->title }}</option>
                 @endforeach
             </select>
-        </div>
-
-        <div class="form-group">
-            <label for="thumbnail">Изображение</label>
-            <input type="file" id="file_name" name="file_name">
-            <p class="help-block">Форматы: <b>jpg, png, gif</b>. Размер: <b>973px * 615px</b>. Программа приведёт изображение к этому разрешению автоматически без сохранения пропорций сторон.</p>
         </div>
 
         <div class="form-group">

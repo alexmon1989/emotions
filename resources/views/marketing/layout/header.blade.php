@@ -58,7 +58,7 @@
         <div class="container">
             <ul class="nav navbar-nav">
                 <li class="{{ ((is_null(Input::get('price_from')) or is_null(Input::get('price_to'))) and Request::segment(1) == 'products') ? 'active' : '' }}">
-                    <a href="{{ action('Marketing\ProductsController@getIndex') . is_null(Input::get('product_type_id')) ? '' :  '?product_type_id='.Input::get('product_type_id') }}"><strong>Все</strong></a>
+                    <a href="{{ action('Marketing\ProductsController@getIndex') }}{{ (is_null(Input::get('product_type_id')) ? '' :  '?product_type_id='.Input::get('product_type_id')) }}"><strong>Все</strong></a>
                 </li>
                 <li class="{{ (!is_null(Input::get('price_from')) and !is_null(Input::get('price_to')) and Input::get('price_from') >= 0 and Input::get('price_to') <= 1500) ? 'active' : '' }}">
                     <a href="{{ action('Marketing\ProductsController@getIndex') }}?price_from=0&price_to=1500{{ !is_null(Input::get('product_type_id')) ? '&product_type_id='.Input::get('product_type_id') : '' }}"><strong>До 1500 руб.</strong></a>

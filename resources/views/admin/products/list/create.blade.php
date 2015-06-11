@@ -21,6 +21,10 @@
         </div>
     </div>
     <div class="box-body">
+        <div class="callout callout-info">
+            <h4>Информация!</h4>
+            <p>Добавление изображений станет доступно после создания продукта.</p>
+        </div>
         @include('admin.products.list._form')
     </div><!-- /.box-body -->
     <div class="box-footer">

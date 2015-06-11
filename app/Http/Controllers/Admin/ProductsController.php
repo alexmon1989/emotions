@@ -3,6 +3,7 @@
 use Emotions\Http\Requests;
 
 use Emotions\Product;
+use Emotions\ProductImage;
 use Emotions\ProductType;
 use Illuminate\Http\Request;
 use Emotions\Http\Requests\StoreProductsRequest;
@@ -149,7 +150,7 @@ class ProductsController extends AdminController {
     private function findProduct($id)
     {
         // Ищем продукт
-        $product = Product::with(['productType'])->find($id);
+        $product = Product::with(['productType', 'images'])->find($id);
         if (empty($product))
         {
             abort(404);
@@ -159,12 +160,66 @@ class ProductsController extends AdminController {
     }
 
     /**
+     * Удаление изображения продукта
+     *
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function getDeleteImage($id)
+    {
+        $image = ProductImage::with('product.images')->find($id);
+        if (empty($image))
+        {
+            abort(404);
+        }
+
+        // Удаляем картинку с ЖД
+        $dir = $this->thumbDest.$image->product->id.'/';
+        File::delete($dir.$image->file_name);
+
+        // Смотрим есть ли еще изображения у продукта. Нет - удаляем весь каталог
+        if (count($image->product->images) == 1)
+        {
+            File::deleteDirectory($dir);
+        }
+
+        $image->delete();
+
+        return redirect()->back()->with('success', 'Изображение успешно удалено.');
+    }
+
+    /**
+     * Действие обработки запроса на добавление изображения
+     * @param $id id продукта, которому добавляем изображение
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function postCreateImage(Request $request, $id)
+    {
+        $this->validate($request, [
+            'file_name' => 'required|image',
+        ], [
+            'file_name.required' => 'Необходимо выбрать изображение.',
+            'file_name.image' => 'Выбранный файл должен быть изображением.'
+        ]);
+
+        // Создаём изображение и сохраняем
+        $image = new ProductImage;
+        $image->product_id = $id;
+        $image->file_name = $this->saveImageToDisk($id);
+        $image->save();
+
+        return redirect()->back()->with('success', 'Изображение успешно добавлено.');
+    }
+
+    /**
      * Метод для добавления изображения в соотв. папку
      *
-     * @param $old_name название старого файла, если его надо удалить
+     * @param $id id продукта, которому добавляем изображение
      * @return string Название загруженного файла с его расширением
      */
-    private function saveImageToDisk($old_name = FALSE)
+    private function saveImageToDisk($id)
     {
         // Название изображения
         $name = str_random(10);
@@ -172,15 +227,17 @@ class ProductsController extends AdminController {
         // Загруженный файл
         $upload_file = Input::file('file_name');
 
+        // Если каталога не существует, то создаём
+        $dir = $this->thumbDest.$id.'/';
+        if (!is_dir($dir))
+        {
+            mkdir($dir);
+        }
+
         Image::make($upload_file)
             ->resize(973, 615)
-            ->save($this->thumbDest.$name.'.'.$upload_file->getClientOriginalExtension());
+            ->save($dir.$name.'.'.$upload_file->getClientOriginalExtension());
 
-        // Если есть старый файл, то удаляем его
-        if ($old_name)
-        {
-            File::delete($this->thumbDest.$old_name);
-        }
 
         return $name.'.'.$upload_file->getClientOriginalExtension();
     }

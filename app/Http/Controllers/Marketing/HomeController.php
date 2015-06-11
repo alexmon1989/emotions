@@ -21,11 +21,10 @@ class HomeController extends Controller {
         $data['article'] = Article::where('type', '=', 'main_article')->first();
 
         // Получаем товары
-        $data['products'] = Product::orderBy('price_new')
-                                ->orderBy('title')
+        $data['products'] = Product::with('images')
                                 ->where('enabled', '=', TRUE)
                                 ->where('is_on_main', '=', TRUE)
-                                ->get();
+                                ->paginate(12); //dd($data['products']);
 
 		return view('marketing.home.index', $data);
 	}

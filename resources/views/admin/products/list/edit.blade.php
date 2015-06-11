@@ -22,12 +22,42 @@
     </div>
     <div class="box-body">
         <div class="box-body">
-            <div class="row">
-                <div class="col-xs-10 col-md-5">
-                    <img width="500" src="{{ asset('assets/img/products/'.$product->file_name) }}" alt="" />
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#product-data">Данные</a></li>
+                <li><a data-toggle="tab" href="#images">Изображения</a></li>
+            </ul>
+            <div class="tab-content">
+                <div id="product-data" class="tab-pane fade in active">
+                    <h3>Данные</h3>
+                    @include('admin.products.list._form')
                 </div>
+
+                <div id="images" class="tab-pane fade">
+                    <h3>Изображения</h3>
+
+                    @include('admin.products.list._form_image')
+
+                    <table class="table table-striped table-bordered" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th width="5%">ID</th>
+                                <th>Изображение</th>
+                                <th width="5%">Действия</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($product->images as $item)
+                            <tr>
+                                <td>{{ $item->id }}</td>
+                                <td><img width="200" src="{{ asset('assets/img/products/'.$item->product->id.'/'.$item->file_name) }}" alt=""/></td>
+                                <td><a class="btn btn-danger btn-sm item-delete" href="{{ action('Admin\ProductsController@getDeleteImage', array('id' => $item->id)) }}" title="Удалить"><i class="fa fa-remove"></i></a></td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+
             </div>
-            @include('admin.products.list._form')
         </div>
     </div><!-- /.box-body -->
     <div class="box-footer">

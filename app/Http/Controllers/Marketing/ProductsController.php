@@ -31,7 +31,22 @@ class ProductsController extends Controller {
             $products = $products->where('product_type_id', '=', $request->get('product_type_id'));
         }
 
-		return view('marketing.products.index', ['products' => $products->get()]);
+        // Фильры для пагинатора
+        $paginatorParams = [];
+        if ($request->get('price_from'))
+        {
+            $paginatorParams['price_from'] = $request->get('price_from');
+        }
+        if ($request->get('price_to'))
+        {
+            $paginatorParams['price_to'] = $request->get('price_to');
+        }
+        if ($request->get('product_type_id'))
+        {
+            $paginatorParams['product_type_id'] = $request->get('product_type_id');
+        }
+
+		return view('marketing.products.index', ['products' => $products->paginate(12), 'paginatorParams' => $paginatorParams]);
 	}
 
     /**

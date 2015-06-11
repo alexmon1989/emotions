@@ -17,13 +17,19 @@
 
 @section('content')
 
+<!-- Pager -->
+<div class="text-center">
+    {!! str_replace('/?', '?', $products->appends($paginatorParams)->render()) !!}
+</div>
+<!-- End Pager -->
+
 @for($i = 0; $i <= count($products) - 1; $i=$i+3)
 <div class="row">
     @for ($j = 0; $j <= 2; $j++)
         @if (isset($products[$i+$j]))
         <div class="col-md-4">
             <div class="thumbnails thumbnail-style">
-                 <a href="{{ action('Marketing\ProductsController@getShow', ['id'=>$products[$i+$j]->id]) }}"><img alt="{{ $products[$i+$j]->title }}" src="{{ asset('assets/img/products/'.$products[$i+$j]->file_name) }}" class="img-responsive"></a>
+                 <a href="{{ action('Marketing\ProductsController@getShow', ['id'=>$products[$i+$j]->id]) }}"><img alt="{{ $products[$i+$j]->title }}" src="{{ count($products[$i+$j]->images) > 0 ? asset('assets/img/products/'.$products[$i+$j]->id.'/'.$products[$i+$j]->images[0]->file_name) : asset('assets/img/products/no.jpg') }}" class="img-responsive"></a>
                  <div class="caption">
                      <h3><a href="{{ action('Marketing\ProductsController@getShow', ['id'=>$products[$i+$j]->id]) }}" class="hover-effect">{{ $products[$i+$j]->title }}</a></h3>
                      <p>{!! $products[$i+$j]->description_short !!}</p>
@@ -49,6 +55,12 @@
     @endfor
 </div>
 @endfor
+
+<!-- Pager -->
+<div class="text-center">
+    {!! str_replace('/?', '?', $products->appends($paginatorParams)->render()) !!}
+</div>
+<!-- End Pager -->
 
 @include('marketing.layout.order_modal')
 
