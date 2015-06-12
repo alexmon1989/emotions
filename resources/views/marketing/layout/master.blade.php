@@ -46,6 +46,8 @@
     <link rel="stylesheet" href="{{ asset('assets/plugins/revolution-slider/rs-plugin/css/settings.css') }}" type="text/css" media="screen">
     <!--[if lt IE 9]><link rel="stylesheet" href="{{ asset('assets/plugins/revolution-slider/rs-plugin/css/settings-ie8.css') }}" type="text/css" media="screen"><![endif]-->
 
+    @yield('styles')
+
     <!-- CSS Customization -->
     <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}">
 </head>
@@ -112,6 +114,8 @@
           ])
     </script>
     <!-- End For Background Image -->
+
+    @yield('scripts')
 
     <!-- BEGIN JIVOSITE CODE {literal} -->
     <script type='text/javascript'>

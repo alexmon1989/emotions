@@ -19,8 +19,26 @@
 @section('content')
 
 <div class="row">
-    <div class="col-md-6 col-md-offset-3 margin-bottom-15">
-        <img class="img-responsive" alt="" src="{{ asset('assets/img/products/'.$product->file_name) }}">
+    <div class="col-md-8 col-md-offset-2">
+        <div class="ms-showcase2-template">
+            <!-- Master Slider -->
+            <div class="master-slider ms-skin-default" id="masterslider">
+                @if (count($product->images) > 0)
+                @foreach($product->images as $item)
+                <div class="ms-slide">
+                    <img class="ms-brd" src="{{ asset('assets/img/products/'.$product->id.'/'.$item->file_name) }}" data-src="{{ asset('assets/img/products/'.$product->id.'/'.$item->file_name) }}" alt="">
+                    <img class="ms-thumb" src="{{ asset('assets/img/products/'.$product->id.'/'.$item->file_name) }}" alt="thumb">
+                </div>
+                @endforeach
+                @else
+                    <div class="ms-slide">
+                        <img class="ms-brd" src="{{ asset('assets/img/products/no.jpg') }}" data-src="{{ asset('assets/img/products/no.jpg') }}" alt="">
+                        <img class="ms-thumb" src="{{ asset('assets/img/products/no.jpg') }}" alt="thumb">
+                    </div>
+                @endif
+            </div>
+            <!-- End Master Slider -->
+        </div>
     </div>
 </div>
 
@@ -60,4 +78,20 @@
 
 @include('marketing.layout.order_modal')
 
+@stop
+
+@section('scripts')
+<script type="text/javascript" src="{{ asset('assets/plugins/masterslider/masterslider.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/plugins/masterslider/jquery.easing.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/js/plugins/master-slider.js') }}"></script>
+<script>
+    jQuery(document).ready(function() {
+        MasterSliderShowcase2.initMasterSliderShowcase2();
+    });
+</script>
+@stop
+
+@section('styles')
+<link rel="stylesheet" href="{{ asset('assets/plugins/masterslider/style/masterslider.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/plugins/masterslider/skins/default/style.css') }}">
 @stop
